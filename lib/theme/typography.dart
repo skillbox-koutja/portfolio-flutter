@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter/theme/pallet.dart';
 
+const fontSize16 = TextStyle(color: textColor, fontSize: 16);
 const fontSize18 = TextStyle(color: textColor, fontSize: 18);
 final fontSize18Bold = fontSize18.copyWith(fontWeight: FontWeight.bold);
 const fontSize20 = TextStyle(color: textColor, fontSize: 20);

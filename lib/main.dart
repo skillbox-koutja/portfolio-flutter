@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter/theme/pallet.dart';
 import 'package:portfolio_flutter/theme/typography.dart';
+import 'package:portfolio_flutter/widgets/interests.dart';
 import 'package:portfolio_flutter/widgets/skills.dart';
 
 void main() {
@@ -35,11 +36,16 @@ class MyApp extends StatelessWidget {
             horizontal: 24,
           ),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: const [
               SizedBox(
                 height: 148,
               ),
-              Skills()
+              Skills(),
+              SizedBox(
+                height: 48,
+              ),
+              Interests(),
             ],
           ),
         ),
