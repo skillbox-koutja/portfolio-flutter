@@ -28,26 +28,26 @@ class Skills extends StatelessWidget {
               height: 26,
             ),
             const SkillProgress(
-              value: 60,
+              value: 30,
               name: 'Dart',
               color: Colors.purple,
             ),
             _skillsSpace,
             const SkillProgress(
-              value: 60,
+              value: 30,
               name: 'Flutter',
               color: Colors.tealAccent,
             ),
             _skillsSpace,
             const SkillProgress(
-              value: 25,
-              name: 'UX',
+              value: 90,
+              name: 'Development of interfaces',
               color: Colors.amberAccent,
             ),
             _skillsSpace,
             const SkillProgress(
-              value: 65,
-              name: 'Soft skills',
+              value: 90,
+              name: 'React',
               color: Colors.pinkAccent,
             ),
             const SizedBox(
