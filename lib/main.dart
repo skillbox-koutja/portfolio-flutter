@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_flutter/theme/pallet.dart';
 import 'package:portfolio_flutter/theme/typography.dart';
-import 'package:portfolio_flutter/widgets/skill_progress.dart';
+import 'package:portfolio_flutter/widgets/skills.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,40 +19,29 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: backgroundColor,
           centerTitle: false,
           leadingWidth: 0,
-          title: const Text(
+          toolbarHeight: 32,
+          titleSpacing: 28,
+          title: Text(
             'About me',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
+            style: fontSize24Bold,
           ),
         ),
-        body: Column(
-          children: [
-            Container(
-              color: Colors.amberAccent,
-              padding: const EdgeInsets.all(20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Skills',
-                    style: fontSize24Bold,
-                  ),
-                  SizedBox(
-                    height: 20,
-                  ),
-                  SkillProgress(
-                    value: 95,
-                    name: 'UX',
-                    color: Colors.purple,
-                  ),
-                ],
+        body: Container(
+          color: backgroundColor,
+          padding: EdgeInsets.symmetric(
+            horizontal: 24,
+          ),
+          child: Column(
+            children: const [
+              SizedBox(
+                height: 148,
               ),
-            ),
-          ],
+              Skills()
+            ],
+          ),
         ),
       ),
     );

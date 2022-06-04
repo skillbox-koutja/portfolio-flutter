@@ -22,11 +22,11 @@ class SkillProgress extends StatelessWidget {
           children: [
             Text(
               name,
-              style: fontSize18,
+              style: fontSize18Bold,
             ),
             Text(
               '$value%',
-              style: fontSize18,
+              style: fontSize18Bold,
             ),
           ],
         ),
