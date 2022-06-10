@@ -7,7 +7,7 @@ class AppTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 32,
+      height: 30,
       child: Text(
         'About me',
         style: fontSize24Bold,

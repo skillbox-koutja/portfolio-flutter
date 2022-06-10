@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/theme/pallet.dart';
 import 'package:portfolio_flutter/theme/typography.dart';
 import 'package:portfolio_flutter/widgets/interest.dart';
 

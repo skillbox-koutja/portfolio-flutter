@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio_flutter/theme/pallet.dart';
-import 'package:portfolio_flutter/theme/typography.dart';
 import 'package:portfolio_flutter/widgets/app_title.dart';
 import 'package:portfolio_flutter/widgets/interests.dart';
 import 'package:portfolio_flutter/widgets/skills.dart';
+import 'package:portfolio_flutter/widgets/app_tab_bar.dart';
 
 void main() {
   runApp(const MyApp());
@@ -30,9 +30,7 @@ class MyApp extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 AppTitle(),
-                SizedBox(
-                  height: 148,
-                ),
+                AppTabBar(),
                 Skills(),
                 SizedBox(
                   height: 48,
