@@ -1,48 +1,42 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_flutter/theme/pallet.dart';
-import 'package:portfolio_flutter/theme/typography.dart';
-import 'package:portfolio_flutter/widgets/app_title.dart';
-import 'package:portfolio_flutter/widgets/interests.dart';
-import 'package:portfolio_flutter/widgets/skills.dart';
+import 'package:go_router/go_router.dart';
+import 'package:portfolio_flutter/widgets/about_me/about_me_page.dart';
+import 'package:portfolio_flutter/widgets/education/education_page.dart';
+import 'package:portfolio_flutter/widgets/experience/experience_page.dart';
 
 void main() {
   runApp(const MyApp());
 }
+
+final _router = GoRouter(
+  routes: [
+    GoRoute(
+      path: '/',
+      builder: (context, state) => const AboutMePage(),
+    ),
+    GoRoute(
+      path: '/education',
+      builder: (context, state) => const EducationPage(),
+    ),
+    GoRoute(
+      path: '/experience',
+      builder: (context, state) => const ExperiencePage(),
+    ),
+  ],
+);
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Portfolio flutter',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        body: Container(
-          color: backgroundColor,
-          padding: EdgeInsets.symmetric(
-            horizontal: 24,
-          ),
-          child: SafeArea(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
-                AppTitle(),
-                SizedBox(
-                  height: 148,
-                ),
-                Skills(),
-                SizedBox(
-                  height: 48,
-                ),
-                Interests(),
-              ],
-            ),
-          ),
-        ),
-      ),
+      routeInformationParser: _router.routeInformationParser,
+      routerDelegate: _router.routerDelegate,
     );
   }
 }
