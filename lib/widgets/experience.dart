@@ -45,41 +45,45 @@ class Experience extends StatelessWidget {
             SizedBox(
               width: 18,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  employment,
-                  style: fontSize18Bold,
-                ),
-                SizedBox(
-                  height: 6,
-                ),
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Text(
-                      '$period',
-                      style: fontSize16,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      '·',
-                      style: fontSize16,
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      company,
-                      style: fontSize16,
-                    ),
-                  ],
-                ),
-              ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    employment,
+                    style: fontSize18Bold,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  SizedBox(
+                    height: 6,
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(
+                        '$period',
+                        style: fontSize16,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        '·',
+                        style: fontSize16,
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        company,
+                        style: fontSize16,
+                        overflow: TextOverflow.ellipsis,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
             ),
           ],
         ),
