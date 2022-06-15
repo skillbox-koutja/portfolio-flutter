@@ -1,9 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:portfolio_flutter/theme/pallet.dart';
 import 'package:portfolio_flutter/widgets/tab_bar_item.dart';
 
+enum AppTabBarItems {
+  aboutMe,
+  education,
+  experience,
+}
+
+// Здесь все довольно очевидно
 class AppTabBar extends StatelessWidget {
-  const AppTabBar({Key? key}) : super(key: key);
+  const AppTabBar({Key? key, required this.currentTab}) : super(key: key);
+
+  final AppTabBarItems currentTab;
 
   @override
   Widget build(BuildContext context) {
@@ -13,24 +23,36 @@ class AppTabBar extends StatelessWidget {
         children: [
           TabBarItem(
             title: 'About me',
-            selected: true,
-            select: () => print('about me'),
-            icon: Icon(
+            selected: currentTab == AppTabBarItems.aboutMe,
+            select: () {
+              GoRouter.of(context).go('/');
+            },
+            icon: const Icon(
               Icons.person,
               color: textColor,
             ),
           ),
           TabBarItem(
             title: 'Experience',
-            selected: true,
-            select: () => print('Experience'),
-            icon: Icon(Icons.cases_rounded, color: textColor),
+            selected: currentTab == AppTabBarItems.experience,
+            select: () {
+              GoRouter.of(context).go('/experience');
+            },
+            icon: const Icon(
+              Icons.cases_rounded,
+              color: textColor,
+            ),
           ),
           TabBarItem(
             title: 'Education',
-            selected: false,
-            select: () => print('Education'),
-            icon: Icon(Icons.school, color: textColor),
+            selected: currentTab == AppTabBarItems.education,
+            select: () {
+              GoRouter.of(context).go('/education');
+            },
+            icon: const Icon(
+              Icons.school,
+              color: textColor,
+            ),
           ),
         ],
       ),
